@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -133,6 +134,31 @@ public class MainFrame extends DbConnector {
                 Main.frame.setVisible(true);
 
                 Login.mainFrame.dispose();
+            }
+        });
+        ExportBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setDialogTitle("Wczytaj plik");
+                int result = fileChooser.showOpenDialog(Login.mainFrame);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    File selectedFile = fileChooser.getSelectedFile();
+                    String filePath = selectedFile.getAbsolutePath();
+                    // tutaj możesz wykonać import pliku na podstawie jego ścieżki
+                }
+            }
+        });
+        ImportBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setDialogTitle("Zapisz jako");
+                int userSelection = fileChooser.showSaveDialog(Login.mainFrame);
+                if (userSelection == JFileChooser.APPROVE_OPTION) {
+                    File fileToSave = fileChooser.getSelectedFile();
+                    // tutaj możesz zapisać plik do wybranej lokalizacji
+                }
             }
         });
     }
