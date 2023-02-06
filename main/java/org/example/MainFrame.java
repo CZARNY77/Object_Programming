@@ -53,7 +53,7 @@ public class MainFrame extends DbConnector {
         Refresh.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                table1.setModel(tableModel);
+                TableRefresh();
             }
         });
 
@@ -188,6 +188,7 @@ public class MainFrame extends DbConnector {
                         ex.printStackTrace();
                     }finally {
                         Disconnect(conn, stmt);
+                        TableRefresh();
                     }
 
 
@@ -234,6 +235,7 @@ public class MainFrame extends DbConnector {
                         throw new RuntimeException(ex);
                     }finally {
                         Disconnect(conn, stmt);
+                        TableRefresh();
                     }
 
                 }

@@ -23,22 +23,17 @@ public class Login  extends DbConnector{
                 String username = loginField.getText();
                 String password = String.valueOf(passwordField.getPassword());
 
-                Main.frame.dispose();
-                Settings.ReadScripts("CustomScript.csv");
-                mainFrame = new JFrame("Magazyn");
-                mainFrame.setContentPane( new MainFrame().panel);
-                mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                mainFrame.pack();
-                mainFrame.setBounds(100, 100, 800, 600);
-                mainFrame.setVisible(true);
                 if (login(username, password)) {
-                    // jeśli logowanie się powiedzie, otwórz nowe okno
-                    //Login loginFrame = new Login();
-                    //loginFrame.setVisible(true);
-                    //dispose(); // zamknij okno logowania
+                    Main.frame.dispose();
+                    Settings.ReadScripts("CustomScript.csv");
+                    mainFrame = new JFrame("Magazyn");
+                    mainFrame.setContentPane( new MainFrame().panel);
+                    mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    mainFrame.pack();
+                    mainFrame.setBounds(100, 100, 800, 600);
+                    mainFrame.setVisible(true);
                 } else {
-                    // w przeciwnym razie wyświetl komunikat o błędnym haśle lub loginie
-                    //JOptionPane.showMessageDialog(panel, "Błędny login lub hasło!");
+                    JOptionPane.showMessageDialog(panel, "Błędny login lub hasło!");
                 }
             }
         });
