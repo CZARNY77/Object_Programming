@@ -37,7 +37,7 @@ public class MainFrame extends DbConnector {
     public JTable table1;
     private JButton Refresh;
     private JButton settingsBtn;
-    private JButton LogoutBtn;
+    public JButton LogoutBtn;
     private JButton deleteBtn;
     private JTextField kodTextField;
     private JTextField textField2;

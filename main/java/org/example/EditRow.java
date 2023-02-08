@@ -42,6 +42,7 @@ public class EditRow extends DbConnector{
 
                     int count = stmt.executeUpdate();
                     System.out.println("Zaktualizowano " + count + " wierszy");
+                    JOptionPane.showMessageDialog(null, "Zaktualizowano " + count + " wierszy");
 
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Wystąpił błąd podczas modyfikacji danych!!");

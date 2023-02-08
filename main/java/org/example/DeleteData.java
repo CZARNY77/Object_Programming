@@ -33,6 +33,7 @@ public class DeleteData extends DbConnector{
 
                     int rowsDeleted = stmt.executeUpdate();
                     System.out.println("Usunięto " + rowsDeleted + " rekordów.");
+                    JOptionPane.showMessageDialog(null, "Usunięto " + rowsDeleted + " rekordów.");
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Wystąpił błąd podczas usuwania danych!!");
                     throw new RuntimeException(ex);

@@ -86,21 +86,6 @@ public class Settings{
                     throw new RuntimeException(ex);
                 }
 
-
-                /*try (CSVPrinter printer = new CSVPrinter(Files.newBufferedWriter(Paths.get(fileName)), CSVFormat.DEFAULT);) {
-                    printer.printRecord("Magazyn", "nie", "Brak");
-                    printer.printRecord("Zamówienia_prod", "nie", "Brak");
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-
-                try (CSVParser parser = new CSVParser(Files.newBufferedReader(Paths.get(fileName)), CSVFormat.DEFAULT.withFirstRecordAsHeader());) {
-                    for (CSVRecord record : parser) {
-                        System.out.println(record.get("Nazwa"));
-                    }
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }*/
                 MainFrame.settingsWindow.dispose();
             }
         });
